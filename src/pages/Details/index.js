@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, FlatList } from 'react-native'
+import { StyleSheet, Text, View, Image, FlatList, Button } from 'react-native'
 import React, {useState, useEffect} from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -36,22 +36,15 @@ class Details extends React.Component{
     render() {
         let {container, loader} = styles
         let {items} = this.state
-        // if (items.length === 0) {
-        //   return (
-        //     <View style={loader}>
-        //       <ActivityIndicator size="large"/>
-        //     </View>
-        //   )
-        // }
         return(
-            <FlatList
-                style={container}
-                data={items}
-                keyExtractor={(item, index) => index.toString()}
-                renderItem={this.forrender}
-              />
-          )
-    }
+          <FlatList
+              style={container}
+              data={items}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={this.forrender}
+            />
+        )
+      }
     
     
 }
